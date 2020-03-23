@@ -1,0 +1,106 @@
+﻿@model khwab.Models.Paper
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<form action="/Home/Create" role="form" method="post">
+    <div class="form-group col-md-6">
+     
+        <input type="text" name="paperId" class="form-control" required="required" placeholder="Paper Code" value= @ViewBag.paperCode  readonly >
+    </div>  
+
+   
+      
+        @*<select id="select_demo_1" name="paperId">
+               @foreach (var item in Model)
+               {
+                 <option value="Knowledge">item.paperId</option>
+               }
+                <option value="Basic">Basic</option>
+                <option value="Item C">Item C</option>
+                <option value="Item D">Item D</option>
+            </select>*@
+
+        <table id="dt_tableTools" class="uk-table" cellspacing="0" width="95%">
+
+            <thead>
+                <tr>
+                    <th>
+                        Serial #
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Select Option
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (int i = 1; i <= 60; i++)
+            {
+                string type = String.Concat("type", i);
+                string option = String.Concat("option", i);
+                    <tr>
+                        <td>
+                            @i
+                        </td>
+                        <td>
+                            <select id="select_demo_1" name="@type">
+                                <option value="Knowledge">Knowledge</option>
+                                <option value="Information">Information</option>
+                                <option value="Book Statement">Book Statement</option>
+                                <option value="Daigram Based">Daigram Based</option>
+                                <option value="Conceptual">Conceptual</option>
+                                <option value="Numerical">Numerical</option>
+                            </select>
+                        </td>
+
+                        <td>
+                            <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                </span>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="text-align:center">
+            <input type="submit" value="Submit" id="abcd" class="md-btn md-btn-success" />
+        </div>
+</form>
+
+<div class="md-card">
+    <div class="md-card-content">
+
+        <div>
+            <a href="/Papers/Index" class="md-btn md-btn-success">Back to List</a>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<khwab.Models.mcq>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<table id="dt_tableTools" class="uk-table" cellspacing="0" width="95%">
+    <thead>
+        <tr>
+            <th>
+                Serial #
+            </th>
+
+            <th>
+                Type
+            </th>
+            <th>
+                Correct Answer
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+      
+
+        @{
+            int i = 1;
+        foreach(var item in Model)
+            {
+               
+            <tr>
+                <td>
+                   
+         @i                 
+                                        
+                </td>
+                <td>
+                   @Html.DisplayFor(modelItem => item.type)
+                </td>
+
+                <td>
+                  @Html.DisplayFor(modelItem => item.mcqOption)
+                </td>
+
+            </tr>
+                i++;
+            }
+
+        }
+    </tbody>
+</table>
+
+
+@*<a href="@Url.Action("Edit", new { id = Model.Select(paperId) })" class="md-btn md-btn-success">Edit</a>*@
+<a href="/Papers/Index" class="md-btn md-btn-success">Back to List</a>

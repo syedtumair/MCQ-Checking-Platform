@@ -1,0 +1,368 @@
+﻿@model khwab.Models.Class1
+
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<form action="/Home/EDIT" role="form" method="post">
+    <div class="form-group col-md-6">
+        <h2>You are editing for paper code  @Model.paperId  </h2>
+
+        <input type="text" name="paperId" class="form-control" required="required" placeholder="Paper Code" value=@Model.paperId readonly >
+
+    </div>
+
+
+        <table id="dt_tableTools" class="uk-table" cellspacing="0" width="95%">
+
+            <thead>
+                <tr>
+                    <th>
+                        Serial #
+                    </th>
+
+                    <th>
+                        Type
+                    </th>
+                    <th>
+                        Select Option
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+        @{ 
+            int i = 1;
+            foreach (var item in Model.mcqs)
+            {
+                string type = String.Concat("type", i);
+                string option = String.Concat("option", i);
+                string ids = String.Concat("mcqid", i);
+
+                    <tr>
+                        <td>
+                            <input type="hidden" name="@ids" value="@item.id" />
+                           @i
+                        </td>
+                        <td>
+                            @if (item.type == "Knowledge")
+                            {
+                            <select id="select_demo_1" name="@type" >
+                                <option value="Knowledge">Knowledge</option>
+                                <option value="Information">Information</option>
+                                <option value="Book Statement">Book Statement</option>
+                                <option value="Daigram Based">Daigram Based</option>
+                                <option value="Conceptual">Conceptual</option>
+                                <option value="Numerical">Numerical</option>
+                            </select>
+
+                            }
+                            else if (item.type == "Information")
+                            {
+                                <select id="select_demo_1" name="@type">
+                                    <option value="Information">Information</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Book Statement">Book Statement</option>
+                                    <option value="Daigram Based">Daigram Based</option>
+                                    <option value="Conceptual">Conceptual</option>
+                                    <option value="Numerical">Numerical</option>
+                                </select>
+                            }
+                            else if (item.type == "Book Statement")
+                            {
+                                <select id="select_demo_1" name="@type">
+                                    <option value="Book Statement">Book Statement</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Information">Information</option> 
+                                    <option value="Daigram Based">Daigram Based</option>
+                                    <option value="Conceptual">Conceptual</option>
+                                    <option value="Numerical">Numerical</option>
+                                </select>
+
+                            }
+                            else if (item.type == "Daigram Based")
+                            {
+                                <select id="select_demo_1" name="@type">
+                                    <option value="Daigram Based">Daigram Based</option>
+                                    <option value="Knowledge">Knowledge</option>
+                                    <option value="Information">Information</option>
+                                    <option value="Book Statement">Book Statement</option>
+                                    <option value="Conceptual">Conceptual</option>
+                                    <option value="Numerical">Numerical</option>
+                                   
+                                </select>
+
+                            }
+                             else if (item.type == "Conceptual")
+                                    {
+                                    <select id="select_demo_1" name="@type">
+                                        <option value="Conceptual">Conceptual</option>
+                                        <option value="Knowledge">Knowledge</option>
+                                        <option value="Information">Information</option>
+                                        <option value="Book Statement">Book Statement</option>
+                                        <option value="Daigram Based">Daigram Based</option>
+                                    
+                                        <option value="Numerical">Numerical</option>
+
+                                    </select>
+
+                                    }
+                                    else if (item.type == "Numerical")
+                                    {
+                                    <select id="select_demo_1" name="@type">
+                                        <option value="Numerical">Numerical</option>
+                                           <option value="Knowledge">Knowledge</option>
+                                        <option value="Information">Information</option>
+                                        <option value="Book Statement">Book Statement</option>
+                                        <option value="Daigram Based">Daigram Based</option>
+                                        <option value="Conceptual">Conceptual</option>
+                                      
+                                    </select>
+
+                                    }
+
+
+                        </td>
+
+                        <td>
+                           @if (item.mcqOption == "A")
+                           {
+
+                             <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required checked />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                 <span class="icheck-inline">
+                                     <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required />
+                                     <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                 </span>
+                            </div>
+
+                           }
+
+                           else if (item.mcqOption == "B")
+                            {
+
+                            <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required  />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required checked />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                </span>
+                            </div>
+
+                            }
+
+                           else if (item.mcqOption == "C")
+                            {
+
+                            <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required checked />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required checked />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                </span>
+                            </div>
+
+                            }
+
+                            else if (item.mcqOption == "D")
+                            {
+
+                            <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required  />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required  checked/>
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                </span>
+                            </div>
+
+                           }
+                           else if (item.mcqOption == "X")
+                           {
+
+                            <div class="uk-width-medium-3-5">
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="A" id="radio_demo_inline_1" data-md-icheck required />
+                                    <label for="radio_demo_inline_1" class="inline-label">A</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="B" id="radio_demo_inline_2" data-md-icheck required />
+                                    <label for="radio_demo_inline_2" class="inline-label">B</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="C" id="radio_demo_inline_3" data-md-icheck required />
+                                    <label for="radio_demo_inline_3" class="inline-label">C</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="D" id="radio_demo_inline_3" data-md-icheck required  />
+                                    <label for="radio_demo_inline_3" class="inline-label">D</label>
+                                </span>
+                                <span class="icheck-inline">
+                                    <input type="radio" name="@option" value="X" id="radio_demo_inline_3" data-md-icheck required checked />
+                                    <label for="radio_demo_inline_3" class="inline-label">X</label>
+                                </span>
+                            </div>
+
+                           }
+
+
+
+
+                        </td>
+                    </tr>
+                i++;
+            }
+        }
+            </tbody>
+        </table>
+        <div style="text-align:center">
+            <input type="submit" value="Submit" id="abcd" class="btn btn-large btn-primary" />
+        </div>
+</form>
+
+
+
+
+
+
+@*@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<table id="dt_tableTools" class="uk-table" cellspacing="0" width="95%">
+    <thead>
+        <tr>
+            <th>
+                Serial #
+            </th>
+
+            <th>
+                <div class="editor-label">
+                    Type
+                </div>
+               
+            </th>
+            <th>
+                <div class="editor-label">
+                    Correct Answer
+                </div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+                int i = 1;
+                foreach (var item in Model.mcqs)
+                {
+
+                <tr>
+                    <td>
+
+                        @i
+
+                    </td>
+                    <td>
+                        <div class="editor-field">
+
+
+                          <input type="text" name="@item.id"/>
+                      
+                          </div>
+                    </td>
+
+                    <td>
+                        <div class="editor-field">
+
+
+                            @Html.EditorFor(model => item.mcqOption)
+                            @Html.ValidationMessageFor(model => item.mcqOption)
+                        </div>
+                    </td>
+
+                </tr>
+                i++;
+            }
+
+        }
+    </tbody>
+</table>
+
+<br />
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Save" class="md-btn md-btn-success" />
+    </div>
+</div>
+            }*@
+
+
+
+<br />
+      
+ 
+   <a href="/Papers/Index" class="md-btn md-btn-success">Back to List</a>   

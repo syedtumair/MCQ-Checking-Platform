@@ -1,0 +1,44 @@
+﻿@model IEnumerable<khwab.Models.Paper>
+
+
+<div class="md-card uk-margin-medium-bottom">
+    <div class="md-card-content">
+        <a href="@Url.Action("Create")" class="md-btn md-btn-primary">Create New Answer Key</a>
+        <table id="dt_tableTools" class="uk-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+
+                    <th>Paper Code</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.paperCode)
+                        </td>
+
+                        <td>
+
+                            @Html.ActionLink("Edit", "Edit", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-primary" })
+                            @Html.ActionLink("Detail", "Details", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-primary" })
+                            @Html.ActionLink("Delete", "Delete", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-danger" })
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    </div>
+</div>
+@Html.ActionLink("Back to Paper Code", "Index", "Papers" ,new { id= 0}, new { @class="md-btn md-btn-success" })
+<a href="Index" class="md-btn md-btn-success">Back to List</a>

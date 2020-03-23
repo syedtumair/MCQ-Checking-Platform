@@ -1,0 +1,72 @@
+﻿@model IEnumerable<khwab.Models.mcq>
+
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+<h3>Are you sure you want to delete this?</h3>
+
+<table id="dt_tableTools" class="uk-table" cellspacing="0" width="95%">
+    <thead>
+        <tr>
+            <th>
+                Serial #
+            </th>
+
+            <th>
+                Type
+            </th>
+            <th>
+                Correct Answer
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @{
+            int i = 1;
+            foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+
+                        @i
+
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.type)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.mcqOption)
+                    </td>
+
+                </tr>
+                i++;
+            }
+
+        }
+    </tbody>
+</table>
+
+
+
+
+
+<div class="md-card">
+    <div class="md-card-content">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div>
+                <input type="submit" value="Delete" class="md-btn md-btn-danger" />
+                <a href="@Url.Action("Index")" class="md-btn md-btn-success">Back to List</a>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model khwab.Models.student
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>student</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rollno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rollno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Section.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Section.name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "uk-badge uk-badge-primary" }) 
+    <div>
+        <a href="@Url.Action("Index")" class="md-btn md-btn-success">Back to List</a>
+
+    </div>
+
+</p>

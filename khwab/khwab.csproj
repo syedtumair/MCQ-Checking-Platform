@@ -1,0 +1,568 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.5.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{37358585-982D-4656-BE11-33290161333D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>khwab</RootNamespace>
+    <AssemblyName>khwab</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard1.1\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net45\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.13.1\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.13.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.13.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.13.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.13.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.7\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.13.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\error_page.min.css" />
+    <Content Include="Content\assets\css\login_page.min.css" />
+    <Content Include="Content\assets\css\main.min.css" />
+    <Content Include="Content\assets\icons\flags\flags%402x.png" />
+    <Content Include="Content\assets\icons\flags\flags.css" />
+    <Content Include="Content\assets\icons\flags\flags.min.css" />
+    <Content Include="Content\assets\icons\flags\flags.png" />
+    <Content Include="Content\assets\icons\flags\Hello.txt" />
+    <Content Include="Content\assets\icons\flags\LICENSE.txt" />
+    <Content Include="Content\assets\icons\material-design-icons\iconjar-map.js" />
+    <Content Include="Content\assets\img\avatars\avatar_01%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_01.png" />
+    <Content Include="Content\assets\img\avatars\avatar_01_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_01_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_02%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_02.png" />
+    <Content Include="Content\assets\img\avatars\avatar_02_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_02_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_03%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_03.png" />
+    <Content Include="Content\assets\img\avatars\avatar_03_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_03_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_04%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_04.png" />
+    <Content Include="Content\assets\img\avatars\avatar_04_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_04_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_05%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_05.png" />
+    <Content Include="Content\assets\img\avatars\avatar_05_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_05_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_06%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_06.png" />
+    <Content Include="Content\assets\img\avatars\avatar_06_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_06_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_07%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_07.png" />
+    <Content Include="Content\assets\img\avatars\avatar_07_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_07_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_08%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_08.png" />
+    <Content Include="Content\assets\img\avatars\avatar_08_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_08_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_09%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_09.png" />
+    <Content Include="Content\assets\img\avatars\avatar_09_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_09_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_10%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_10.png" />
+    <Content Include="Content\assets\img\avatars\avatar_10_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_10_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_11%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_11.png" />
+    <Content Include="Content\assets\img\avatars\avatar_11_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_11_tn.png" />
+    <Content Include="Content\assets\img\avatars\avatar_12%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_12.png" />
+    <Content Include="Content\assets\img\avatars\avatar_12_tn%402x.png" />
+    <Content Include="Content\assets\img\avatars\avatar_12_tn.png" />
+    <Content Include="Content\assets\img\avatars\user%402x.png" />
+    <Content Include="Content\assets\img\avatars\user-alt%402x.png" />
+    <Content Include="Content\assets\img\avatars\user-alt.png" />
+    <Content Include="Content\assets\img\avatars\user.png" />
+    <Content Include="Content\assets\img\blank.png" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge%402x.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_1%402x.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_1.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_2%402x.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_2.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_3%402x.jpg" />
+    <Content Include="Content\assets\img\ecommerce\s6_edge_3.jpg" />
+    <Content Include="Content\assets\img\favicon-16x16.png" />
+    <Content Include="Content\assets\img\favicon-32x32.png" />
+    <Content Include="Content\assets\img\gallery\Image01%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image01.jpg" />
+    <Content Include="Content\assets\img\gallery\Image02%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image02.jpg" />
+    <Content Include="Content\assets\img\gallery\Image03%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image03.jpg" />
+    <Content Include="Content\assets\img\gallery\Image04%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image04.jpg" />
+    <Content Include="Content\assets\img\gallery\Image05%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image05.jpg" />
+    <Content Include="Content\assets\img\gallery\Image06%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image06.jpg" />
+    <Content Include="Content\assets\img\gallery\Image07%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image07.jpg" />
+    <Content Include="Content\assets\img\gallery\Image08%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image08.jpg" />
+    <Content Include="Content\assets\img\gallery\Image09%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image09.jpg" />
+    <Content Include="Content\assets\img\gallery\Image10%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image10.jpg" />
+    <Content Include="Content\assets\img\gallery\Image11%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image11.jpg" />
+    <Content Include="Content\assets\img\gallery\Image12%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image12.jpg" />
+    <Content Include="Content\assets\img\gallery\Image13%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image13.jpg" />
+    <Content Include="Content\assets\img\gallery\Image14%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image14.jpg" />
+    <Content Include="Content\assets\img\gallery\Image15%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image15.jpg" />
+    <Content Include="Content\assets\img\gallery\Image16%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image16.jpg" />
+    <Content Include="Content\assets\img\gallery\Image17%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image17.jpg" />
+    <Content Include="Content\assets\img\gallery\Image18%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image18.jpg" />
+    <Content Include="Content\assets\img\gallery\Image19%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image19.jpg" />
+    <Content Include="Content\assets\img\gallery\Image20%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image20.jpg" />
+    <Content Include="Content\assets\img\gallery\Image21%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image21.jpg" />
+    <Content Include="Content\assets\img\gallery\Image22%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image22.jpg" />
+    <Content Include="Content\assets\img\gallery\Image23%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image23.jpg" />
+    <Content Include="Content\assets\img\gallery\Image24%402x.jpg" />
+    <Content Include="Content\assets\img\gallery\Image24.jpg" />
+    <Content Include="Content\assets\img\logo_main%402x.png" />
+    <Content Include="Content\assets\img\logo_main.png" />
+    <Content Include="Content\assets\img\md-images\ic_beenhere_black_24dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_beenhere_black_48dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_local_dining_black_24dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_local_dining_black_48dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_location_history_black_24dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_location_history_black_48dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_place_black_24dp.png" />
+    <Content Include="Content\assets\img\md-images\ic_place_black_48dp.png" />
+    <Content Include="Content\assets\img\spinners\spinner%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_danger%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_danger.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_large%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_large.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_medium%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_medium.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_small%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_small.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_success%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_success.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_warning%402x.gif" />
+    <Content Include="Content\assets\img\spinners\spinner_warning.gif" />
+    <Content Include="Content\assets\js\altair_admin_common.min.js" />
+    <Content Include="Content\assets\js\common.min.js" />
+    <Content Include="Content\assets\js\custom\datatables_uikit.min.js" />
+    <Content Include="Content\assets\js\custom\gantt_chart.min.js" />
+    <Content Include="Content\assets\js\custom\handlebars_helpers.min.js" />
+    <Content Include="Content\assets\js\custom\uikit_datepicker.min.js" />
+    <Content Include="Content\assets\js\custom\uikit_fileinput.min.js" />
+    <Content Include="Content\assets\js\custom\uikit_sticky.min.js" />
+    <Content Include="Content\assets\js\kendoui.custom.min.js" />
+    <Content Include="Content\assets\js\pages\components_nestable.min.js" />
+    <Content Include="Content\assets\js\pages\components_notifications.min.js" />
+    <Content Include="Content\assets\js\pages\components_preloaders.min.js" />
+    <Content Include="Content\assets\js\pages\dashboard.min.js" />
+    <Content Include="Content\assets\js\pages\ecommerce_product_edit.min.js" />
+    <Content Include="Content\assets\js\pages\forms_advanced.min.js" />
+    <Content Include="Content\assets\js\pages\forms_file_upload.min.js" />
+    <Content Include="Content\assets\js\pages\forms_validation.min.js" />
+    <Content Include="Content\assets\js\pages\kendoui.min.js" />
+    <Content Include="Content\assets\js\pages\login_page.min.js" />
+    <Content Include="Content\assets\js\pages\page_contact_list.min.js" />
+    <Content Include="Content\assets\js\pages\page_help.min.js" />
+    <Content Include="Content\assets\js\pages\page_invoices.min.js" />
+    <Content Include="Content\assets\js\pages\page_mailbox.min.js" />
+    <Content Include="Content\assets\js\pages\page_notes.min.js" />
+    <Content Include="Content\assets\js\pages\page_settings.min.js" />
+    <Content Include="Content\assets\js\pages\page_snippets.min.js" />
+    <Content Include="Content\assets\js\pages\page_user_edit.min.js" />
+    <Content Include="Content\assets\js\pages\page_user_profile.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_charts.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_datatables.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_fullcalendar.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_gantt_chart.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_google_maps.min.js" />
+    <Content Include="Content\assets\js\pages\plugins_vector_maps.min.js" />
+    <Content Include="Content\assets\js\uikit_custom.min.js" />
+    <Content Include="Content\assets\js\uikit_htmleditor_custom.min.js" />
+    <Content Include="Content\assets\kipslogo.png" />
+    <Content Include="Content\assets\logo.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="ErrorPages\404.aspx" />
+    <Content Include="ErrorPages\Oops.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\assets\icons\material-design-icons\MaterialIcons-Regular.eot" />
+    <Content Include="Content\assets\icons\material-design-icons\MaterialIcons-Regular.ijmap" />
+    <Content Include="Content\assets\icons\material-design-icons\MaterialIcons-Regular.ttf" />
+    <Content Include="Content\assets\icons\material-design-icons\MaterialIcons-Regular.woff" />
+    <Content Include="Content\assets\icons\material-design-icons\MaterialIcons-Regular.woff2" />
+    <Content Include="Content\assets\icons\material-design-icons\README.md" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Web.config" />
+    <None Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <None Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1-vsdoc.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <None Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <None Include="Scripts\umd\popper.js.map" />
+    <None Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper.js" />
+    <None Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <None Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\index.js" />
+    <None Include="Scripts\README.md" />
+    <None Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.min.js" />
+    <None Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.js" />
+    <None Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <None Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.js" />
+    <None Include="Scripts\index.js.flow" />
+    <None Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <None Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.js" />
+    <None Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <None Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <None Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <None Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <None Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.min.css" />
+    <None Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.css" />
+    <None Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <None Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <None Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <None Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PapersController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\SectionsController.cs" />
+    <Compile Include="Controllers\studentsController.cs" />
+    <Compile Include="ErrorPages\404.aspx.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\404.aspx.designer.cs">
+      <DependentUpon>404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Oops.aspx.designer.cs">
+      <DependentUpon>Oops.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Filters\LoginFilter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
+    <Content Include="Views\Papers\Create.cshtml" />
+    <Content Include="Views\Papers\Delete.cshtml" />
+    <Content Include="Views\Papers\Details.cshtml" />
+    <Content Include="Views\Papers\Edit.cshtml" />
+    <Content Include="Views\Papers\Index.cshtml" />
+    <Content Include="Views\students\Create.cshtml" />
+    <Content Include="Views\students\Delete.cshtml" />
+    <Content Include="Views\students\Details.cshtml" />
+    <Content Include="Views\students\Edit.cshtml" />
+    <Content Include="Views\students\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Sections\Create.cshtml" />
+    <Content Include="Views\Sections\Delete.cshtml" />
+    <Content Include="Views\Sections\Details.cshtml" />
+    <Content Include="Views\Sections\Edit.cshtml" />
+    <Content Include="Views\Sections\Index.cshtml" />
+    <Content Include="Views\Account\changePassword.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\bower_components\" />
+    <Folder Include="Content\data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60620</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60620/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.13.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.13.1\build\Microsoft.ApplicationInsights.DependencyCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.13.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.13.1\build\Microsoft.ApplicationInsights.PerfCounterCollector.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.13.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.13.1\build\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.WindowsServer.2.13.1\build\Microsoft.ApplicationInsights.WindowsServer.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.WindowsServer.2.13.1\build\Microsoft.ApplicationInsights.WindowsServer.targets')" />
+  <Import Project="..\packages\Microsoft.ApplicationInsights.Web.2.13.1\build\Microsoft.ApplicationInsights.Web.targets" Condition="Exists('..\packages\Microsoft.ApplicationInsights.Web.2.13.1\build\Microsoft.ApplicationInsights.Web.targets')" />
+</Project>

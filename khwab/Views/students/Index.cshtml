@@ -1,0 +1,48 @@
+﻿@model IEnumerable<khwab.Models.student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="md-card uk-margin-medium-bottom">
+    <div class="md-card-content">
+        <a href="@Url.Action("Create")" class="md-btn md-btn-primary">Create Paper Code</a>
+        <table id="dt_tableTools" class="uk-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.rollno)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Section.name)
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.rollno)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Section.name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "uk-badge uk-badge-primary" }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "uk-badge uk-badge-success" }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "uk-badge uk-badge-primary" })
+                        </td>
+                    </tr>
+                }
+
+        </table>

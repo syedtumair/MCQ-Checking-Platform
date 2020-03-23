@@ -1,0 +1,54 @@
+﻿@model IEnumerable<khwab.Models.Paper>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="md-card uk-margin-medium-bottom">
+    <div class="md-card-content">
+        <a href="@Url.Action("Create")" class="md-btn md-btn-primary">Create Paper Code</a>
+        <table id="dt_tableTools" class="uk-table" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.title)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.paperCode)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.paperCode)
+                    </td>
+                    <td>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.id } ,new { @class = "uk-badge uk-badge-primary" }) |*@
+
+                        @Html.ActionLink("Edit", "Edit", "Home", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-primary" })
+
+
+                        @Html.ActionLink("Add Options", "Create", "Home", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-success" })
+                        @Html.ActionLink("Details", "Details", "Home", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-primary" })
+
+                        @*@Html.ActionLink("Delete", "Delete", "Home", new { id = item.paperCode }, new { @class = "uk-badge uk-badge-success" })*@
+
+
+                        @*@Html.ActionLink("Details", "Details", new { id = item.id } ,new { @class = "uk-badge uk-badge-primary" }) |*@
+                        @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "uk-badge uk-badge-danger" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
